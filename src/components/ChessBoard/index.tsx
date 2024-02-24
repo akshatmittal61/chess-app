@@ -12,7 +12,7 @@ const Chessboard = () => {
 				<div
 					key={horizontalAxis[i] + verticalAxis[j]}
 					className={
-						`tile square ${i % 2 === j % 2 ? "white" : "black"}`
+						`tile tile-${i % 2 === j % 2 ? "white" : "black"}`
 					}
 				>
 					({horizontalAxis[i]}+{verticalAxis[j]}){" "}
