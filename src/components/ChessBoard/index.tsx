@@ -1,5 +1,7 @@
 import React from "react";
 import "./styles.scss";
+import Tile from "./Tile";
+import { Piece, pieces } from "../../constants/chessboard";
 
 const verticalAxis = ["1", "2", "3", "4", "5", "6", "7", "8"];
 const horizontalAxis = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -9,14 +11,15 @@ const Chessboard = () => {
 	for (let j = verticalAxis.length - 1; j >= 0; j--) {
 		for (let i = 0; i < horizontalAxis.length; i++) {
 			board.push(
-				<div
+				<Tile
 					key={horizontalAxis[i] + verticalAxis[j]}
-					className={
-						`tile tile-${i % 2 === j % 2 ? "white" : "black"}`
+					number={i + j + 2}
+					piece={
+						pieces.find(
+							(piece) => piece.x === i && piece.y === j
+						) as Piece
 					}
-				>
-					({horizontalAxis[i]}+{verticalAxis[j]}){" "}
-				</div>
+				/>
 			);
 		}
 	}

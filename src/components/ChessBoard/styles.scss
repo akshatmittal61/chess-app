@@ -5,20 +5,4 @@
 	display: grid;
 	grid-template-columns: repeat(8, 100px);
 	grid-template-rows: repeat(8, 100px);
-
-	.tile {
-		width: 100px;
-		height: 100px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		&-white {
-			background-color: #ebecd0;
-		}
-
-		&-black {
-			background-color: #779556;
-		}
-	}
 }
