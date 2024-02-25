@@ -10,7 +10,14 @@ interface TileProps {
 const Tile: React.FC<TileProps> = ({ piece, number }) => {
 	return (
 		<div className={`tile tile-${number % 2 !== 0 ? "white" : "black"}`}>
-			{piece ? <img src={piece.image} alt={piece.name} /> : null}
+			{piece ? (
+				<div
+					className="tile-piece"
+					style={{
+						backgroundImage: `url(${piece.image})`,
+					}}
+				/>
+			) : null}
 		</div>
 	);
 };

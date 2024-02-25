@@ -1,11 +1,14 @@
 #chessboard .tile {
     width: 100px;
     height: 100px;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 64px;
-    line-height: 150%;
+    align-items: center; */
+    display: grid;
+    place-items: center;
+    // font-size: 64px;
+    // line-height: 150%;
+    // position: relative;
 
     &-white {
         background-color: #ebecd0;
@@ -13,5 +16,22 @@
 
     &-black {
         background-color: #779556;
+    }
+
+
+    &-piece {
+        width: 100px;
+        height: 100px;
+        background-size: 75% 75%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: grab;
+        }
+
+        &:active {
+            cursor: grabbing;
+        }
     }
 }
